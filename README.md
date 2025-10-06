@@ -16,23 +16,7 @@ Este projeto foi desenvolvido para a disciplina de **Programação Orientada a O
   - Valor total do estoque por fornecedor
   - Medicamentos controlados x não controlados  
 
----
 
-## 🧩 Estrutura do Projeto
-
-src/
-└─ main/
-├─ java/
-│ ├─ org/medicamentos/controller/ → Controladores JavaFX
-│ ├─ org/medicamentos/model/ → Classes de domínio (Medicamento, Fornecedor)
-│ ├─ org/medicamentos/repository/ → Repositório e manipulação do CSV
-│ └─ org/medicamentos/utils/ → Utilitários (CsvUtil, validações, etc.)
-└─ resources/
-├─ org/medicamentos/view/ → Telas FXML do JavaFX
-└─ medicamentos.csv → Arquivo de dados (salvo automaticamente)
-
-
----
 
 ## ⚙️ Tecnologias Utilizadas
 
