@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.medicamentos.controller.MainController" spacing="10">
+
+    <!-- Padding corrigido -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <Label text="Controle de Medicamentos" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <!-- Formulário -->
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Nome:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nomeField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Validade:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dataValidadePicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Quantidade em estoque:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="estoqueField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Preço:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="precoField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Controlado:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <CheckBox fx:id="controladoCheckBox" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Botões -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Salvar" onAction="#onSalvar"/>
+        <Button text="Listar" onAction="#onListar"/>
+        <Button text="Consultar" onAction="#onConsultar"/>
+        <Button text="Excluir" onAction="#onExcluir"/>
+    </HBox>
+
+    <!-- Tabela de Medicamentos -->
+    <TableView fx:id="medicamentosTable" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="codigoColumn" text="Código" prefWidth="100"/>
+            <TableColumn fx:id="nomeColumn" text="Nome" prefWidth="200"/>
+            <TableColumn fx:id="validadeColumn" text="Validade" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+</VBox>
