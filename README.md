@@ -1,41 +1,86 @@
-# 💊 Sistema de Gerenciamento de Medicamentos - JavaFX
+🧾 Sistema de Controle de Medicamentos
+📘 Descrição
 
-Este projeto foi desenvolvido para a disciplina de **Programação Orientada a Objetos** e tem como objetivo criar um **sistema de controle de estoque de medicamentos de uma farmácia**, utilizando **JavaFX**, **POO**, **manipulação de arquivos CSV** e **Stream API**.
+O Sistema de Controle de Medicamentos é uma aplicação desenvolvida em Java com JavaFX, que permite gerenciar o estoque de medicamentos de uma farmácia.
+O sistema utiliza interface gráfica, persistência em arquivo CSV e segue o padrão MVC (Model-View-Controller) para melhor organização e manutenção do código.
 
----
+⚙️ Funcionalidades
 
-## 🚀 Funcionalidades
+Cadastrar medicamentos: Permite inserir um novo medicamento informando nome, validade, quantidade, preço e se é controlado.
 
-✅ Cadastrar um novo medicamento  
-✅ Excluir um medicamento existente  
-✅ Consultar medicamento por código  
-✅ Listar todos os medicamentos cadastrados  
-✅ Relatórios usando Stream API:
-  - Medicamentos próximos ao vencimento (30 dias)
-  - Medicamentos com estoque baixo (menos de 5 unidades)
-  - Valor total do estoque por fornecedor
-  - Medicamentos controlados x não controlados  
+Listar medicamentos: Exibe todos os medicamentos cadastrados em uma tabela.
 
+Consultar medicamentos: Busca um medicamento pelo nome e exibe suas informações.
 
+Excluir medicamentos: Remove um medicamento do sistema.
 
-## ⚙️ Tecnologias Utilizadas
+Persistência de dados: Todos os registros são armazenados no arquivo data/medicamentos.csv, sendo carregados automaticamente ao iniciar o programa.
 
-- **Java 17+**
-- **JavaFX 21+**
-- **IntelliJ IDEA** (ou Eclipse)
-- **API Stream (Java 8+)**
-- **CSV para persistência de dados**
+🧩 Estrutura do Projeto
+medicamentos/
+│
+├── data/
+│   └── medicamentos.csv
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── org/medicamentos/
+│       │       ├── controller/
+│       │       │   └── MainController.java
+│       │       ├── model/
+│       │       │   ├── Medicamentos.java
+│       │       │   └── Fornecedor.java
+│       │       ├── utils/
+│       │       │   └── PathFXML.java
+│       │       ├── view/
+│       │       │   └── Main.java
+│       │       └── module-info.java
+│       │
+│       └── resources/
+│           └── view/
+│               └── MainView.fxml
+│
+└── pom.xml
 
----
+🧱 Requisitos
 
-## 📥 Como Clonar o Projeto
+JDK 17 ou superior
 
-Abra o terminal e execute:
+JavaFX SDK compatível com sua versão do JDK
 
-```bash
-git clone https://github.com/SEU-USUARIO/sistema-farmacia.git
+IntelliJ IDEA (ou outra IDE Java compatível)
 
+Maven (para compilar e gerenciar dependências, caso utilize o pom.xml)
 
-Em seguida:
+▶️ Como Executar o Projeto
+1. Abrir o projeto
 
-cd sistema-farmacia
+Abra o projeto no IntelliJ IDEA ou na IDE de sua preferência.
+
+2. Configurar o SDK
+
+Vá em File > Project Structure > Project SDK
+
+Selecione o JDK 17 (ou superior)
+
+3. Configurar o JavaFX (caso necessário)
+
+Se o JavaFX não estiver configurado, adicione as bibliotecas manualmente ou utilize o Maven para gerenciar dependências.
+
+4. Executar o programa
+
+No IntelliJ:
+
+Abra a classe Main.java no pacote org.medicamentos.view
+
+Clique no botão Run ▶️
+ou execute o comando:
+
+mvn clean javafx:run
+
+💾 Armazenamento de Dados
+
+Os dados dos medicamentos são armazenados no arquivo:
+
+data/medicamentos.csv
