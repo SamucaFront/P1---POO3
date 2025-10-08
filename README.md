@@ -47,7 +47,7 @@ No **IntelliJ IDEA**:
    mvn clean javafx:run
 
 
-## 🧩 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```bash
 medicamentos/
